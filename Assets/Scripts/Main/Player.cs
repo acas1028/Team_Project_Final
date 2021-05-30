@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = 7.5f;
+                moveSpeed = 15.0f;
                 animator.SetBool("Walk_Anim", false);
                 animator.SetBool("Roll_Anim", true);
             }
