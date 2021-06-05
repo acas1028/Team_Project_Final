@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
     public int count;
     public int life;
     public int destroyCount;
-    public int where;
-    public int now;
     public int[] answerStage = new int[25];
     public int[] checkStage = new int[25];
 
@@ -100,6 +98,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 }

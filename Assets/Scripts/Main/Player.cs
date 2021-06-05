@@ -84,11 +84,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "BW_Object")
-
         {
             if (GameManager.Instance.count <= 1)
             {
-                if (other.GetComponent<CircleObject>().isLighting != GameManager.Instance.answerStage[0] && other.name != "Sphere1")
+                if (other.GetComponent<CircleObject>().isLighting == GameManager.Instance.answerStage[0] && other.name != "Sphere1")
                 {
                     other.gameObject.SetActive(false);
                     GameManager.Instance.destroyCount++;
@@ -113,13 +112,13 @@ public class Player : MonoBehaviour
             GameManager.Instance.CheckAnswer();
         }
 
-        if (other.tag == "Last")
+        if (other.tag == "LastObject")
         {
             if (GameManager.Instance.checkStage[0] == 1)
             {
                 for (int i = 0; i < 25; i++)
                 {
-                    GameManager.Instance.answerStage[i]=2;
+                    GameManager.Instance.answerStage[i] = 2;
                 }
             }
             else if (GameManager.Instance.checkStage[0] == 2)

@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonClick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager.Instance.count >= 2)
+        {
+            GameManager.Instance.stageTip.gameObject.SetActive(true);
+            GameManager.Instance.stageTip2.gameObject.SetActive(false);
+        }
+        else
+        {
+            GameManager.Instance.stageTip.gameObject.SetActive(false);
+            GameManager.Instance.stageTip2.gameObject.SetActive(true);
+        }
+    }
+
+    public void ReButtonClick()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Main");
+    }
+    public void TitleButtonClick()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Title");
     }
 }

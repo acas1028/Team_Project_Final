@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AnswerObject
   - BW_Object
+  - LastObject
   layers:
   - Default
   - TransparentFX
