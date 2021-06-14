@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public GameObject stageLast;
     public GameObject stageTip;
     public GameObject stageTip2;
-
+    public GameObject SoundBox;
     public void SetAnswer()
     {
         for (int i = 0; i < 25; i++)

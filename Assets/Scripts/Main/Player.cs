@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public Transform cameraTransform;
     public Camera cam;
+    public GameObject SoundBox;
 
     //public bool isGround;
 
@@ -24,7 +25,6 @@ public class Player : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
-
         moveSpeed = 5.0f;
         rotationSpeed = 360.0f;
         gravity = 9.81f;
@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
                 {
                     GameManager.Instance.count--;
                     GameManager.Instance.SetAnswer();
+                    SoundBox.GetComponent<Main_SoundPlayer>().PlaySound();
                 }
                 else
                 {
