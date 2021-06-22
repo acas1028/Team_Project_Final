@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
+    int i;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,8 @@ public class GameLogic : MonoBehaviour
         GameManager.Instance.SetAnswer();
 
         GameManager.Instance.pause = false;
+
+        i = 0;
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class GameLogic : MonoBehaviour
             {
                 GameManager.Instance.pause = false;
                 Time.timeScale = 1.0f;
-                GameManager.Instance.puaseUi.gameObject.SetActive(false);
+                GameManager.Instance.pause_Ui.gameObject.SetActive(false);
             }
         }
         else
@@ -47,7 +51,7 @@ public class GameLogic : MonoBehaviour
             {
                 GameManager.Instance.pause = true;
                 Time.timeScale = 0.0f;
-                GameManager.Instance.puaseUi.gameObject.SetActive(true);
+                GameManager.Instance.pause_Ui.gameObject.SetActive(true);
             }
         }
     }

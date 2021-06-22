@@ -91,10 +91,12 @@ public class Player : MonoBehaviour
                 {
                     other.gameObject.SetActive(false);
                     GameManager.Instance.destroyCount++;
+                    Instantiate(GameManager.Instance.Effect1, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), Quaternion.identity);
                 }
                 else if (other.GetComponent<CircleObject>().isLighting != GameManager.Instance.answerStage[0] && other.name != "Sphere1")
                 {
                     GameManager.Instance.life--;
+                    Instantiate(GameManager.Instance.Effect, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
                 }
 
                 if (other.name == "Sphere1")
@@ -140,12 +142,14 @@ public class Player : MonoBehaviour
                 if (GameManager.Instance.CheckAnswer())
                 {
                     GameManager.Instance.count--;
+                    Instantiate(GameManager.Instance.Effect1, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), Quaternion.identity);
                     GameManager.Instance.SetAnswer();
                     SoundBox.GetComponent<Main_SoundPlayer>().PlaySound(0);
                 }
                 else
                 {
                     GameManager.Instance.life--;
+                    Instantiate(GameManager.Instance.Effect, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
                     SoundBox.GetComponent<Main_SoundPlayer>().PlaySound(1);
                 }
             }

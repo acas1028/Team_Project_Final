@@ -34,12 +34,16 @@ public class GameManager : MonoBehaviour
     public bool pause;
 
     public GameObject stageUi;
-    public GameObject puaseUi;
+    public GameObject pause_Ui;
+    public GameObject Setting_Ui;
     public GameObject stageAnswer;
     public GameObject stageLast;
     public GameObject stageTip;
     public GameObject stageTip2;
     public GameObject SoundBox;
+    public GameObject Effect;
+    public GameObject Effect1;
+
     public void SetAnswer()
     {
         for (int i = 0; i < 25; i++)
@@ -99,6 +103,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }

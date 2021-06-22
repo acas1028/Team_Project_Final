@@ -7,7 +7,6 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-   
 
     public float MusicVol;
     public float AudioVol;
@@ -17,13 +16,13 @@ public class SoundManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             if (Instance != this)
                 Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
     void Start()

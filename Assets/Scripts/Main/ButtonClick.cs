@@ -30,4 +30,14 @@ public class ButtonClick : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("Title");
     }
+    public void SettingButtonClick()
+    {
+        GameManager.Instance.Setting_Ui.gameObject.SetActive(true);
+        GameManager.Instance.pause_Ui.gameObject.SetActive(false);
+    }
+    public void ExitSettingButtonClick()
+    {
+        GameManager.Instance.Setting_Ui.gameObject.SetActive(false); 
+        GameManager.Instance.pause_Ui.gameObject.SetActive(true);
+    }
 }
