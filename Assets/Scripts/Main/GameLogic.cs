@@ -23,7 +23,7 @@ public class GameLogic : MonoBehaviour
         if (GameManager.Instance.count <= 1)
             GameManager.Instance.LastMission();
 
-        if (GameManager.Instance.life <= 0)
+        if (GameManager.Instance.life <= 0 || GameManager.Instance.time <= 0)
             SceneManager.LoadScene("Fail");
 
         if (GameManager.Instance.destroyCount >= 24)

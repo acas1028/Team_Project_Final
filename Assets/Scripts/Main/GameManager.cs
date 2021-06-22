@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public int count;
     public int life;
+    public float time;
     public int destroyCount;
     public int[] answerStage = new int[25];
     public int[] checkStage = new int[25];

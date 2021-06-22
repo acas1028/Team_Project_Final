@@ -141,11 +141,12 @@ public class Player : MonoBehaviour
                 {
                     GameManager.Instance.count--;
                     GameManager.Instance.SetAnswer();
-                    SoundBox.GetComponent<Main_SoundPlayer>().PlaySound();
+                    SoundBox.GetComponent<Main_SoundPlayer>().PlaySound(0);
                 }
                 else
                 {
                     GameManager.Instance.life--;
+                    SoundBox.GetComponent<Main_SoundPlayer>().PlaySound(1);
                 }
             }
         }
